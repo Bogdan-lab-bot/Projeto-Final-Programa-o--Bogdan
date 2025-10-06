@@ -1,0 +1,37 @@
+CREATE DATABASE LojaOnline;
+USE LojaOnline;
+
+CREATE TABLE Clientes(
+idClientes int primary key auto_increment,
+Nome varchar(77),
+Email varchar(100),
+Morada varchar(100),
+NIF int,
+Idade int);
+
+CREATE TABLE Produtos(
+idProdutos INT PRIMARY KEY AUTO_INCREMENT,
+NomeProduto varchar(70),
+Preco decimal(18,2));   
+
+CREATE TABLE Encomendas(
+idEncomenda int primary key auto_increment,
+QuantidadeProdutos int,
+idProdutos int,
+idClientes int,
+FOREIGN KEY (idProdutos) REFERENCES Produtos (idProdutos),
+FOREIGN KEY (idClientes) REFERENCES Clientes (idClientes));
+
+
+CREATE TABLE Pagamentos(
+idPagamento int primary key auto_increment,
+TipoPagamento varchar(39),
+idClientes int,
+FOREIGN KEY (idClientes) REFERENCES Clientes (idClientes));
+
+CREATE TABLE Transportadoras(
+idTransporte int primary key auto_increment,
+NomeTransportadora varchar(70),
+DataEntrega date,
+idEncomenda int,
+FOREIGN KEY (idEncomenda) REFERENCES Encomendas(idEncomenda));

@@ -1,0 +1,40 @@
+#*1* Seleção simples - Mostrar todos os registos de uma tabela à escolha 
+SELECT * FROM Clientes;
+
+#*2* Seleção com condições - Mostrar registos filtrados 
+SELECT * FROM Clientes
+WHERE Idade > 25;
+
+#*3* Junção de tabelas - Apresentar dados combinados de pelo menos duas 
+#tabelas
+SELECT c.Nome AS Cliente, p.NomeProduto AS Produto, e.QuantidadeProdutos
+FROM Encomendas e
+JOIN Clientes c ON e.idClientes = c.idClientes
+JOIN Produtos p ON e.idProdutos = p.idProdutos;
+
+#*4* Agregação (COUNT, SUM, AVG, MIN ou MAX) - Escolher pelo menos três 
+#funções de agregação
+SELECT SUM(Preco)
+FROM Produtos;
+
+SELECT AVG(Idade)
+FROM Clientes;
+
+SELECT COUNT(NIF)
+FROM Clientes;
+
+#*5* Atualização de registos (UPDATE) -    Atualizar um campo num registo 
+#específico
+UPDATE Clientes
+SET Idade=Idade+1
+WHERE nome='Gabriel Candeeiro Sapateiro Pedreiro';
+
+#*6* Eliminação de registos (DELETE) - Eliminar um registo específico em 2 
+#tabelas
+DELETE
+FROM Encomendas
+WHERE QuantidadeProdutos=1000;
+
+DELETE
+FROM Transportadoras
+WHERE DataEntrega=2025-11-05;

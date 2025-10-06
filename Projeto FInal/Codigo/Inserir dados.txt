@@ -1,0 +1,34 @@
+INSERT INTO CLIENTES(Nome, Email, Morada, NIF, Idade) values
+("Diamantino Reis", "diamantinodelas@gmail.com", "Portugal, Rua do Distrito N6", 235431865, 27)
+("Gabriel Candeeiro Sapateiro Pedreiro", "moscadacolaria9@gmail.com", "Alge-ria, Rua dos moinhos N13 Colaria Torres Vedras", 218900121, 17)
+("Sergey Busdonhov", "russobebado@sapo.pt", "Moldavia, Rua da Fonte N14 Lisboa", 235431865, 27)
+("Borat Miguel", "eunaoseifalarportugues@cazaq.com", "Cazaquistao, Qaraqanda, Rua da Terra N19 2790-192", 231783158, 41)
+("Nuno Montanha", "nunomontanhoso190@gmail.com", "Portugal, Torres Vedras, Asseiceira, 2523-90", 235431865, 14);
+
+INSERT INTO PRODUTOS(NomeProduto, Preco) values
+("Pedregulhos brihantes", "800.00"),
+("Moscas enlatadas", "20.00"),
+("Garrafas Vodkas", "2500.99"),
+("Almofadas longas", "25.50"),
+("Fones", "70.99");
+
+INSERT INTO Encomendas(QuantidadeProdutos, idProdutos, idClientes) values
+(1000, 1, 1),
+(69, 2, 2),
+(21, 3, 3),
+(55, 4, 4),
+(78, 5, 5);
+
+INSERT INTO Pagamentos(TipoPagamento, idClientes) values
+("Multibanco", 1),
+("Paypal", 2),
+("Mastercard", 3),
+("Multibanco", 4),
+("Crypto", 5);
+
+INSERT INTO Transportadoras(NomeTransportadora,DataEntrega,idEncomenda) values
+("DPD", "2025-10-02", 1),
+("CTT", "2025-11-05", 2),
+("CTT", "2026-03-11", 3),
+("DHL", "2025-10-09", 4),
+("FedEx", "2025-11-01", 5);
